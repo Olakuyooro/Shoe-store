@@ -31,11 +31,12 @@ function SamplePrevArrow(props) {
     />
   );
 }
-const ShoeSlider = () => {
+const ShoeSlider = (props) => {
 
   const settings = {
     dots: true,
     infinite: true,
+    focusOnSelect: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -75,7 +76,7 @@ const ShoeSlider = () => {
   return (
     <div className="w-100 lg:w-100 md:w-72 ml-2 sm:h-72 sm:w-96 " >
       <Slider {...settings} >
-        {imageList.map((photo, index)=> <div><img src={photo}></img></div>)}
+        {imageList.map((photo, index)=> <div key={index}><img src={photo}></img></div>)}
         {/* <div   >
           <img src={mainShoe} alt=""></img>
         </div>
@@ -89,6 +90,7 @@ const ShoeSlider = () => {
           <img src={fourMainShoe} alt=""></img>
         </div> */}
       </Slider>
+        {console.log(props.defaultSlider)}
     </div>
   );
 };

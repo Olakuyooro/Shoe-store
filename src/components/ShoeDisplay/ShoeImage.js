@@ -17,7 +17,7 @@ const ShoeImage = (props) => {
         {props.firstShoe && (
           <img
             onClick={() => {
-              value2();
+              value2(0);
             }}
             className="rounded-2xl cursor-pointer"
             src={mainShoe}
@@ -27,7 +27,7 @@ const ShoeImage = (props) => {
         {props.secondShoe && (
           <img
             onClick={() => {
-              value2();
+              value2(1);
             }}
             className="rounded-2xl cursor-pointer"
             src={secondMainShoe}
@@ -37,7 +37,7 @@ const ShoeImage = (props) => {
         {props.thirdShoe && (
           <img
             onClick={() => {
-              value2();
+              value2(2);
             }}
             className="  rounded-2xl cursor-pointer"
             src={thirdMainShoe}
@@ -47,7 +47,7 @@ const ShoeImage = (props) => {
         {props.fourthShoe && (
           <img
             onClick={() => {
-              value2();
+              value2(3);
             }}
             className=" rounded-2xl cursor-pointer"
             src={fourMainShoe}

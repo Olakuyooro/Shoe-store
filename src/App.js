@@ -21,6 +21,7 @@ function App() {
   const [cartPhoto, setCartPhoto] = useState(true);
   const [secondCartPhoto, setSecondCartPhoto] = useState(false);
   const [filled, setFilled] = useState(false);
+  const [defaultSlider, setDefaultSlider] = useState(0)
 
   const emptyHandler = () => {
     if (itemNumber < 1) {
@@ -51,8 +52,9 @@ function App() {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const openerHandler = () => {
+  const openerHandler = (defaultSlider) => {
     setIsOpen(true);
+    setDefaultSlider(defaultSlider)
   };
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -94,11 +96,12 @@ function App() {
       </UserContext.Provider>
 
       <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-        <ShoeSlider />
+        <ShoeSlider default={defaultSlider} />
       </Modal>
       <UserContext.Provider value={closeHandler}>
         <MobileModal open={modalOpen} />
       </UserContext.Provider>
+      
     </div>
   );
 }
